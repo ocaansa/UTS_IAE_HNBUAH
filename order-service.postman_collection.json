@@ -1,0 +1,322 @@
+{
+	"info": {
+		"_postman_id": "11814a1e-8d2a-4857-b746-c28bb5dd7725",
+		"name": "order-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43974730",
+		"_collection_link": "https://www.postman.com/anisa-2931019/workspace/uts/collection/43974730-11814a1e-8d2a-4857-b746-c28bb5dd7725?action=share&source=collection_link&creator=43974730"
+	},
+	"item": [
+		{
+			"name": "Create Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": 1,\r\n    \"product_id\": 6,\r\n    \"quantity\": 3,\r\n    \"order_date\": \"2025-05-02\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{order_url}}api/orders",
+					"host": [
+						"{{order_url}}api"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "berhasil",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": 1,\r\n    \"product_id\": 1,\r\n    \"quantity\": 2,\r\n    \"order_date\": \"2025-05-02\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{order_url}}api/orders",
+							"host": [
+								"{{order_url}}api"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8003"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 May 2025 12:45:19 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"Success\",\n    \"message\": \"Order created successfully\",\n    \"data\": {\n        \"user_id\": 1,\n        \"product_id\": 1,\n        \"name\": \"Oca\",\n        \"email\": \"oca0@gmail.com\",\n        \"product_name\": \"Apel Fuji\",\n        \"description\": \"Import\",\n        \"quantity\": 2,\n        \"total_price\": 50000,\n        \"order_date\": \"2025-05-02\",\n        \"status\": \"pending\",\n        \"updated_at\": \"2025-05-02T12:45:19.000000Z\",\n        \"created_at\": \"2025-05-02T12:45:19.000000Z\",\n        \"id\": 1\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "get data order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{order_url}}api/orders",
+					"host": [
+						"{{order_url}}api"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "berhasil",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{order_url}}api/orders",
+							"host": [
+								"{{order_url}}api"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8003"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 May 2025 12:47:33 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "57"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"message\": \"Orders retrieved successfully\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": 1,\n            \"product_id\": 1,\n            \"name\": \"Oca\",\n            \"email\": \"oca0@gmail.com\",\n            \"product_name\": \"Apel Fuji\",\n            \"description\": \"Import\",\n            \"quantity\": 2,\n            \"total_price\": 50000,\n            \"order_date\": \"2025-05-02\",\n            \"status\": \"pending\",\n            \"created_at\": \"2025-05-02T12:45:19.000000Z\",\n            \"updated_at\": \"2025-05-02T12:45:19.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"user_id\": 1,\n            \"product_id\": 4,\n            \"name\": \"Oca\",\n            \"email\": \"oca0@gmail.com\",\n            \"product_name\": \"Sari Apel\",\n            \"description\": \"Import\",\n            \"quantity\": 5,\n            \"total_price\": 15000,\n            \"order_date\": \"2025-05-02\",\n            \"status\": \"pending\",\n            \"created_at\": \"2025-05-02T12:46:47.000000Z\",\n            \"updated_at\": \"2025-05-02T12:46:47.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"user_id\": 1,\n            \"product_id\": 6,\n            \"name\": \"Oca\",\n            \"email\": \"oca0@gmail.com\",\n            \"product_name\": \"Kiwi\",\n            \"description\": \"Local\",\n            \"quantity\": 3,\n            \"total_price\": 30000,\n            \"order_date\": \"2025-05-02\",\n            \"status\": \"pending\",\n            \"created_at\": \"2025-05-02T12:47:22.000000Z\",\n            \"updated_at\": \"2025-05-02T12:47:22.000000Z\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "get data order by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{order_url}}api/orders/1",
+					"host": [
+						"{{order_url}}api"
+					],
+					"path": [
+						"orders",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "berhasil",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{order_url}}api/orders/1",
+							"host": [
+								"{{order_url}}api"
+							],
+							"path": [
+								"orders",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8003"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 May 2025 12:48:02 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"Success\",\n    \"message\": \"Order retrieved successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"user_id\": 1,\n        \"product_id\": 1,\n        \"name\": \"Oca\",\n        \"email\": \"oca0@gmail.com\",\n        \"product_name\": \"Apel Fuji\",\n        \"description\": \"Import\",\n        \"quantity\": 2,\n        \"total_price\": 50000,\n        \"order_date\": \"2025-05-02\",\n        \"status\": \"pending\",\n        \"created_at\": \"2025-05-02T12:45:19.000000Z\",\n        \"updated_at\": \"2025-05-02T12:45:19.000000Z\"\n    }\n}"
+				},
+				{
+					"name": "gagal",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{order_url}}api/orders/4",
+							"host": [
+								"{{order_url}}api"
+							],
+							"path": [
+								"orders",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8003"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 May 2025 12:48:18 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"Failed\",\n    \"message\": \"Order not found\",\n    \"data\": null\n}"
+				}
+			]
+		}
+	]
+}
