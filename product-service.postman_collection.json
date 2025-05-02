@@ -1,0 +1,763 @@
+{
+	"info": {
+		"_postman_id": "6fa2f28c-8aa7-46c7-9268-d06b34ec1d61",
+		"name": "product-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43974730",
+		"_collection_link": "https://www.postman.com/anisa-2931019/workspace/uts/collection/43974730-6fa2f28c-8aa7-46c7-9268-d06b34ec1d61?action=share&source=collection_link&creator=43974730"
+	},
+	"item": [
+		{
+			"name": "Create Data Product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Jeruk Bali\",\r\n    \"description\": \"Local\",\r\n    \"price\": 5000,\r\n    \"stock\": 50\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{product_url}}api/products",
+					"host": [
+						"{{product_url}}api"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "berhasil",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Apel Fuji\",\r\n    \"description\": \"Import\",\r\n    \"price\": 25000,\r\n    \"stock\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{product_url}}api/products",
+							"host": [
+								"{{product_url}}api"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8002"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 May 2025 11:41:33 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"Success\",\n    \"message\": \"Product created successfully\",\n    \"data\": {\n        \"name\": \"Apel Fuji\",\n        \"description\": \"Import\",\n        \"price\": 25000,\n        \"stock\": 100,\n        \"updated_at\": \"2025-05-02T11:41:33.000000Z\",\n        \"created_at\": \"2025-05-02T11:41:33.000000Z\",\n        \"id\": 1\n    }\n}"
+				},
+				{
+					"name": "gagal",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Apel Fuji\",\r\n    \"description\": \"Import\",\r\n    \"price\": ,\r\n    \"stock\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{product_url}}api/products",
+							"host": [
+								"{{product_url}}api"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8002"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 May 2025 11:42:09 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "57"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"Failed\",\n    \"message\": {\n        \"name\": [\n            \"The name field is required.\"\n        ],\n        \"description\": [\n            \"The description field is required.\"\n        ],\n        \"price\": [\n            \"The price field is required.\"\n        ],\n        \"stock\": [\n            \"The stock field is required.\"\n        ]\n    },\n    \"data\": null\n}"
+				},
+				{
+					"name": "gagal",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Jeruk\",\r\n    \"description\": \"Bali\",\r\n    \"price\": 10000,\r\n    \"stock\": 400\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{product_url}}api/products",
+							"host": [
+								"{{product_url}}api"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8002"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 May 2025 11:44:15 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"Failed\",\n    \"message\": {\n        \"description\": [\n            \"The selected description is invalid.\"\n        ]\n    },\n    \"data\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Data Product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{product_url}}api/products",
+					"host": [
+						"{{product_url}}api"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "berhasil",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{product_url}}api/products",
+							"host": [
+								"{{product_url}}api"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8002"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 May 2025 11:45:06 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"Success\",\n    \"message\": \"Products retrieved successfully\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Apel Fuji\",\n            \"description\": \"Import\",\n            \"price\": 25000,\n            \"stock\": 100,\n            \"created_at\": \"2025-05-02T11:41:33.000000Z\",\n            \"updated_at\": \"2025-05-02T11:41:33.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Apel Fuji\",\n            \"description\": \"Import\",\n            \"price\": 25000,\n            \"stock\": 100,\n            \"created_at\": \"2025-05-02T11:42:01.000000Z\",\n            \"updated_at\": \"2025-05-02T11:42:01.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Apel Batam\",\n            \"description\": \"Import\",\n            \"price\": 3000,\n            \"stock\": 100,\n            \"created_at\": \"2025-05-02T11:42:45.000000Z\",\n            \"updated_at\": \"2025-05-02T11:42:45.000000Z\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Sari Apel\",\n            \"description\": \"Import\",\n            \"price\": 3000,\n            \"stock\": 100,\n            \"created_at\": \"2025-05-02T11:43:05.000000Z\",\n            \"updated_at\": \"2025-05-02T11:43:05.000000Z\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Mangga Dua\",\n            \"description\": \"Import\",\n            \"price\": 6000,\n            \"stock\": 100,\n            \"created_at\": \"2025-05-02T11:43:35.000000Z\",\n            \"updated_at\": \"2025-05-02T11:43:35.000000Z\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Kiwi\",\n            \"description\": \"Local\",\n            \"price\": 10000,\n            \"stock\": 400,\n            \"created_at\": \"2025-05-02T11:44:01.000000Z\",\n            \"updated_at\": \"2025-05-02T11:44:01.000000Z\"\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Jeruk Bali\",\n            \"description\": \"Local\",\n            \"price\": 5000,\n            \"stock\": 50,\n            \"created_at\": \"2025-05-02T11:44:44.000000Z\",\n            \"updated_at\": \"2025-05-02T11:44:44.000000Z\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Data Product by ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{product_url}}api/products/5",
+					"host": [
+						"{{product_url}}api"
+					],
+					"path": [
+						"products",
+						"5"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "berhasil",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{product_url}}api/products/5",
+							"host": [
+								"{{product_url}}api"
+							],
+							"path": [
+								"products",
+								"5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8002"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 May 2025 11:45:58 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"Success\",\n    \"message\": \"Product retrieved successfully\",\n    \"data\": {\n        \"id\": 5,\n        \"name\": \"Mangga Dua\",\n        \"description\": \"Import\",\n        \"price\": 6000,\n        \"stock\": 100,\n        \"created_at\": \"2025-05-02T11:43:35.000000Z\",\n        \"updated_at\": \"2025-05-02T11:43:35.000000Z\"\n    }\n}"
+				},
+				{
+					"name": "Gagal",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{product_url}}api/products/15",
+							"host": [
+								"{{product_url}}api"
+							],
+							"path": [
+								"products",
+								"15"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8002"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 May 2025 11:46:16 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"Failed\",\n    \"message\": \"Product not found\",\n    \"data\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Data Product",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Mangga\",\r\n    \"description\": \"Local\",\r\n    \"price\": 2000,\r\n    \"stock\": 1000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{product_url}}api/products/2",
+					"host": [
+						"{{product_url}}api"
+					],
+					"path": [
+						"products",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "berhasil",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Mangga\",\r\n    \"description\": \"Local\",\r\n    \"price\": 2000,\r\n    \"stock\": 1000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{product_url}}api/products/2",
+							"host": [
+								"{{product_url}}api"
+							],
+							"path": [
+								"products",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8002"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 May 2025 11:47:49 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"Success\",\n    \"message\": \"Product updated successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"Mangga\",\n        \"description\": \"Local\",\n        \"price\": 2000,\n        \"stock\": 1000,\n        \"created_at\": \"2025-05-02T11:42:01.000000Z\",\n        \"updated_at\": \"2025-05-02T11:47:49.000000Z\"\n    }\n}"
+				},
+				{
+					"name": "gagal",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Mangga\",\r\n    \"description\": \"Local\",\r\n    \"price\": 2000,\r\n    \"stock\": 1000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{product_url}}api/products/18",
+							"host": [
+								"{{product_url}}api"
+							],
+							"path": [
+								"products",
+								"18"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8002"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 May 2025 11:48:03 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"Failed\",\n    \"message\": \"Product not found\",\n    \"data\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Data Product",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{product_url}}api/products/7",
+					"host": [
+						"{{product_url}}api"
+					],
+					"path": [
+						"products",
+						"7"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "berhasil",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{product_url}}api/products/7",
+							"host": [
+								"{{product_url}}api"
+							],
+							"path": [
+								"products",
+								"7"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8002"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 May 2025 11:49:28 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"Success\",\n    \"message\": \"Product deleted successfully\",\n    \"data\": null\n}"
+				},
+				{
+					"name": "gagal",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{product_url}}api/products/90",
+							"host": [
+								"{{product_url}}api"
+							],
+							"path": [
+								"products",
+								"90"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8002"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.12"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 May 2025 11:49:43 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"Failed\",\n    \"message\": \"Product not found\",\n    \"data\": null\n}"
+				}
+			]
+		}
+	]
+}
